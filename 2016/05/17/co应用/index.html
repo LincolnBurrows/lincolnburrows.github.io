@@ -1,7 +1,7 @@
 <html>
 <head>
 	
-	<title>nginx入门</title>
+	<title>co应用</title>
 	<meta name="keywords" content="lincolnburrows.github.io,yangd,umbrella" />
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -32,11 +32,11 @@
 <body>
 
 
-<h2 class="title">nginx入门</h2>
+<h2 class="title">co应用</h2>
 <!---
 <div style="text-align:center;margin-top: -10px;">
 <div class="article-category">
-发表于2017年2月24日
+发表于2016年5月17日
 
 
 
@@ -46,18 +46,11 @@
 </div>
 
 
-<p>##下载安装就不提了，直接解压启动<br>测试启动，本地访问127.0.0.1</p>
-<ul>
-<li>nginx -s reload  修改配置文件后重新加载生效</li>
-<li>nginx -s reopen  重新打开日志文件</li>
-<li>nginx -t path-to/nginx.conf 测试nginx配置文件是否正确</li>
-<li>nginx -s stop 快速关闭nginx</li>
-<li>nginx -s quit 完整有序关闭nginx</li>
-<li>nginx -c path-to/nginx.conf 指定配置文件启动nginx</li>
-</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">co(</span><br><span class="line">  generator (</span><br><span class="line">     <span class="keyword">var</span> n = <span class="keyword">yield</span> (array,generator,promise,thunk <span class="function"><span class="keyword">function</span>)</span><br><span class="line">     <span class="title">return</span> <span class="title">n</span>;</span><br><span class="line">  )</span><br><span class="line">)</span><br><span class="line">.<span class="title">then</span>(<span class="params">function(data</span>)</span>&#123;xxx&#125;)</span><br><span class="line">.catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;xxx&#125;)</span><br></pre></td></tr></table></figure>
+<p>co解析generator函数-&gt;  function* xx(){}<br>yield用于暂停generator<br>变量n为yield后面函数callback(err,data)的参数,callback是一个函数,需thunkify()</p>
 
 
-<!--<a href="https://lincolnburrows.github.io/2017-month-day-title#disqus_thread" class="article-comment-link">Comments</a>
+<!--<a href="https://lincolnburrows.github.io/2016/05/17/co应用/#disqus_thread" class="article-comment-link">Comments</a>
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
