@@ -36,7 +36,7 @@
 <!---
 <div style="text-align:center;margin-top: -10px;">
 <div class="article-category">
-发表于2018年11月16日
+发表于2018年11月22日
 
 
 
@@ -45,7 +45,21 @@
 --->
 
 
-<p>hello world</p>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<div>
+    <label>ID:</label><br>
+    <textarea type="text" id="vsensor_id" style="width: 80%; height: 30px"></textarea><br>
+    <label>CODE:</label><br>
+    <textarea type="text" id="vsensor_code" style="width: 80%; height: 30px"></textarea><br>
+    <button type="button" class="btn btn-info" onclick="getcode()">Generate</button>
+</div>
+<script type="text/javascript">
+    function getcode(){
+        var vs_id = $('#vsensor_id').val();
+        var code = window.btoa(vs_id)
+        $("#vsensor_code").val(code);
+    }
+</script>
 
 <!--<a href="https://lincolnburrows.github.io/vision/index.html#disqus_thread" class="article-comment-link">Comments</a>
 <div id="disqus_thread"></div>
