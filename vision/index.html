@@ -36,7 +36,7 @@
 <!---
 <div style="text-align:center;margin-top: -10px;">
 <div class="article-category">
-发表于2018年11月22日
+发表于2018年11月26日
 
 
 
@@ -57,7 +57,10 @@
     function getcode(){
         var vs_id = $('#vsensor_id').val();
         var code = window.btoa(vs_id)
-        $("#vsensor_code").val(code);
+        var re = new RegExp("\\w{1,"+6+"}","g")
+        var ma = code.match(re)
+        var regCode = ma.join('-')
+        $("#vsensor_code").val(regCode);
     }
 </script>
 
