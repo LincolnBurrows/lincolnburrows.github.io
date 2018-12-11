@@ -36,7 +36,7 @@
 <!---
 <div style="text-align:center;margin-top: -10px;">
 <div class="article-category">
-发表于2018年11月26日
+发表于2018年12月11日
 
 
 
@@ -46,12 +46,22 @@
 
 
 <script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/md5.js"></script>
 <div>
+    <label>旧</label><br>
     <label>ID:</label><br>
     <textarea type="text" id="vsensor_id" style="width: 100%; height: 30px"></textarea><br>
     <label>CODE:</label><br>
     <textarea type="text" id="vsensor_code" style="width: 100%; height: 30px"></textarea><br>
     <button type="button" class="btn btn-info" style="font-size: 20px; display: block; margin-top: 5px" onclick="getcode()">Generate</button>
+</div>
+<div style="margin-top: 20px">
+    <label>新(大写字母和数字组成)</label><br>
+    <label>ID:(1000FD-4A0A40-74D02B-7E6E51)</label><br>
+    <textarea type="text" id="hareware_id" style="width: 100%; height: 30px"></textarea><br>
+    <label>CODE:(6170-4F40-8B43-3D20)</label><br>
+    <textarea type="text" id="active_code" style="width: 100%; height: 30px"></textarea><br>
+    <button type="button" class="btn btn-info" style="font-size: 20px; display: block; margin-top: 5px" onclick="getactivecode()">Generate</button>
 </div>
 <script type="text/javascript">
     function getcode(){
@@ -61,6 +71,18 @@
         var ma = code.match(re)
         var regCode = ma.join('-')
         $("#vsensor_code").val(regCode);
+    }
+
+    function getactivecode(){
+        var hareware_id = $('#hareware_id').val();
+        var id_reg = new RegExp('-','g')
+        var _id = hareware_id.replace(id_reg,'')
+        var full_code = hex_md5(_id + 'lincolnburrows1990').toUpperCase()
+        _code = full_code.substring(8,24)
+        var _re = new RegExp("\\w{1,"+4+"}","g")
+        var _ma = _code.match(_re)
+        var activeCode = _ma.join('-')
+        $("#active_code").val(activeCode);
     }
 </script>
 
