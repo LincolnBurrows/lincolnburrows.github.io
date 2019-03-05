@@ -1,16 +1,23 @@
 <html>
 <head>
 	
-	<title>1027</title>
+	<title></title>
 	<meta name="keywords" content="lincolnburrows.github.io,yangd,umbrella" />
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     
-        <link href="/css/home.css?v=3" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+	   <link href="/css/main.css?v=3" rel="stylesheet" type="text/css" />
+    
+        <script src="/js/util.js"></script>
+        <script>
+            if(isMobile()) {
+                loadjscssfile('../css/mobile.css', 'css');
+            } else {
+                loadjscssfile('../css/desktop.css', 'css');
+            }
+        </script> 
     
 
     <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Atom feed">
@@ -82,69 +89,6 @@
 
                     
                     
-<li class="list-group-item title">
-    <a target="_blank" href="/2018-12-25-江南愤青.html">江南愤青</a>
-</li>
-
-
-                    
-                    
-<li class="list-group-item title">
-    <a target="_blank" href="/2018-12-13-peace-bridge.html">安和桥</a>
-</li>
-
-
-                    
-                    
-<li class="list-group-item title">
-    <a target="_blank" href="/2018-12-13-c-memory-leak.html">C++内存泄漏检测</a>
-</li>
-
-
-                    
-                    
-<li class="list-group-item title">
-    <a target="_blank" href="/2018-11-26-javascript-code-snippet.html">javascript代码片段</a>
-</li>
-
-
-                    
-                    
-<li class="list-group-item title">
-    <a target="_blank" href="/2018-11-22-dream-car.html">dream-car</a>
-</li>
-
-
-                    
-                    
-<li class="list-group-item title">
-    <a target="_blank" href="/2018-11-22-markdown-write-rule.html">Markdown语法.md</a>
-</li>
-
-
-                    
-                    
-<li class="list-group-item title">
-    <a target="_blank" href="/2018-11-14-nmap.html">nmap</a>
-</li>
-
-
-                    
-                    
-<li class="list-group-item title">
-    <a target="_blank" href="/2016-06-29-wechat-server.html">用Node.js搭建微信公众号服务器</a>
-</li>
-
-
-                    
-                    
-<li class="list-group-item title">
-    <a target="_blank" href="/2016-05-25-daemon-guide.html">守护进程的几种方法</a>
-</li>
-
-
-                    
-                    
                 </ul>
             </div>
         </div>
@@ -156,11 +100,6 @@
 </div>
     </div>
 </div>
-
-
-<!--加载导航栏所需js文件-->
-<script src="/js/jquery.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
 
 
 
