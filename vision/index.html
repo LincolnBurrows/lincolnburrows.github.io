@@ -66,7 +66,9 @@
     }
 
     function getactivecode(){
-        var hareware_id = $('#hareware_id').val();
+        var hareware_id_origin = $('#hareware_id').val();
+        var hareware_id_a = hareware_id_origin.replace(/\s*/g,"");
+        var hareware_id = hareware_id_a.replace(/[\r\n]/g,"");
         var id_reg = new RegExp('-','g')
         var _id = hareware_id.replace(id_reg,'')
         var full_code = hex_md5(_id + 'lincolnburrows1990').toUpperCase()
