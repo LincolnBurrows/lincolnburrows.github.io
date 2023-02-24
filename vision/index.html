@@ -55,6 +55,30 @@
     <textarea type="text" id="active_code" style="width: 100%; height: 30px"></textarea><br>
     <button type="button" class="btn btn-info" style="font-size: 20px; display: block; margin-top: 5px" onclick="getactivecode()">Generate</button>
 </div>
+    <div>
+        <div>
+            影音间:
+            <div style="margin: 10px;">
+                <button type="button" onclick="openHitpos1()">打 开</button>
+                <button type="button" onclick="closeHitpos1()">关 闭</button>
+            </div>
+            <div style="margin: 10px;">
+                <button type="button" onclick="openHitpos1_light()">仅开灯</button>
+                <button type="button" onclick="closeHitpos1_light()">仅关灯</button>
+            </div>
+        </div>
+        <div>
+            会议间：
+            <div style="margin: 10px;">
+                <button type="button" onclick="openHitpos2()">打 开</button>
+                <button type="button" onclick="closeHitpos2()">关 闭</button>
+            </div>
+            <div style="margin: 10px;">
+                <button type="button" onclick="openHitpos2_light()">仅开灯</button>
+                <button type="button" onclick="closeHitpos2_light()">仅关灯</button>
+            </div>
+        </div>
+    </div>
 <script type="text/javascript">
     function getcode(){
         var vs_id = $('#vsensor_id').val();
@@ -78,6 +102,129 @@
         var activeCode = _ma.join('-')
         $("#active_code").val(activeCode);
     }
+</script>
+    <script>
+    // 影音间
+    function openHitpos1(){
+        let gatewaySN = 'WG593OWAN21051703602'
+        let code =  1  // 开关传感器  code = 1 开模拟器，code =  0 关模拟器
+        let url = `https://yunying.digitgolf.com/power/simulator?gatewaySN=${gatewaySN}&&code=${code}`
+        
+        axios.get(url).then(d=>{
+            console.log(d.data)
+            if (d.data.code==0) {
+                alert('影音间打位打开成功')
+            } else {
+                alert('影音间打位打开失败')
+            }
+        })
+    }
+    function closeHitpos1(){
+        let gatewaySN = 'WG593OWAN21051703602'
+        let code =  0  // 开关传感器  code = 1 开模拟器，code =  0 关模拟器
+        let url = `https://yunying.digitgolf.com/power/simulator?gatewaySN=${gatewaySN}&&code=${code}`
+        
+        axios.get(url).then(d=>{
+            console.log(d.data)
+            if (d.data.code==0) {
+                alert('影音间打位关闭成功')
+            } else {
+                alert('影音间打位关闭失败')
+            }
+        })
+    }
+    // 开灯
+    function openHitpos1_light(){
+        let gatewaySN = 'WG593OWAN21051703602'
+        let code =  1  // 开关灯 code = 1 开灯，code =  0 关灯
+        let url = `https://yunying.digitgolf.com/power/light?gatewaySN=${gatewaySN}&&code=${code}`
+        
+        axios.get(url).then(d=>{
+            console.log(d.data)
+            if (d.data.code==0) {
+                alert('影音间打位开灯成功')
+            } else {
+                alert('影音间打位开灯失败')
+            }
+        })
+    }
+    // 关灯
+    function closeHitpos1_light(){
+        let gatewaySN = 'WG593OWAN21051703602'
+        let code =  0  //  开关灯 code = 1 开灯，code =  0 关灯
+        let url = `https://yunying.digitgolf.com/power/light?gatewaySN=${gatewaySN}&&code=${code}`
+        
+        axios.get(url).then(d=>{
+            console.log(d.data)
+            if (d.data.code==0) {
+                alert('影音间打位关灯成功')
+            } else {
+                alert('影音间打位关灯失败')
+            }
+        })
+    }
+    
+    // 会议间
+    function openHitpos2(){
+        let gatewaySN = 'WG593OWAN21122901503'
+        let code =  1  // 开关传感器  code = 1 开模拟器，code =  0 关模拟器
+        let url = `https://yunying.digitgolf.com/power/simulator?gatewaySN=${gatewaySN}&&code=${code}`
+        
+        axios.get(url).then(d=>{
+            console.log(d.data)
+            if (d.data.code==0) {
+                alert('会议间打位打开成功')
+            } else {
+                alert('会议间打位打开失败')
+            }
+        })
+    }
+    function closeHitpos2(){
+        let gatewaySN = 'WG593OWAN21122901503'
+        let code =  0  // 开关传感器  code = 1 开模拟器，code =  0 关模拟器
+        let url = `https://yunying.digitgolf.com/power/simulator?gatewaySN=${gatewaySN}&&code=${code}`
+        
+        axios.get(url).then(d=>{
+            console.log(d.data)
+            if (d.data.code==0) {
+                alert('会议间打位关闭成功')
+            } else {
+                alert('会议间打位关闭失败')
+            }
+        })
+    }
+
+    // 开灯
+    function openHitpos2_light(){
+        let gatewaySN = 'WG593OWAN21122901503'
+        let code =  1  // 开关灯 code = 1 开灯，code =  0 关灯
+        let url = `https://yunying.digitgolf.com/power/light?gatewaySN=${gatewaySN}&&code=${code}`
+        
+        axios.get(url).then(d=>{
+            console.log(d.data)
+            if (d.data.code==0) {
+                alert('会议间打位开灯成功')
+            } else {
+                alert('会议间打位开灯失败')
+            }
+        })
+    }
+    // 关灯
+    function closeHitpos2_light(){
+        let gatewaySN = 'WG593OWAN21122901503'
+        let code =  0  //  开关灯 code = 1 开灯，code =  0 关灯
+        let url = `https://yunying.digitgolf.com/power/light?gatewaySN=${gatewaySN}&&code=${code}`
+        
+        axios.get(url).then(d=>{
+            console.log(d.data)
+            if (d.data.code==0) {
+                alert('会议间打位关灯成功')
+            } else {
+                alert('会议间打位关灯失败')
+            }
+        })
+    }
+
 </script>
 
 <!--<a href="https://lincolnburrows.github.io/vision/index.html#disqus_thread" class="article-comment-link">Comments</a>
